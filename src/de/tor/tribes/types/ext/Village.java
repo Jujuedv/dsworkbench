@@ -58,6 +58,11 @@ public class Village implements Comparable<Village>, Serializable, BBSupport {
     }
 
     @Override
+    public int hashCode() {
+        return x * 1000 + y;
+    }
+
+    @Override
     public String[] getReplacements(boolean pExtended) {
         String nameVal = getName();
         String xVal = Short.toString(getX());
