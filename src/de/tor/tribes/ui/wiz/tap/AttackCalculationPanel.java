@@ -21,6 +21,7 @@ import de.tor.tribes.util.JOptionPaneHelper;
 import de.tor.tribes.util.UIHelper;
 import de.tor.tribes.util.algo.AbstractAttackAlgorithm;
 import de.tor.tribes.util.algo.BruteForce;
+import de.tor.tribes.util.algo.EdmondsKarpAttack;
 import de.tor.tribes.util.algo.Iterix;
 import de.tor.tribes.util.algo.types.TimeFrame;
 import java.awt.BorderLayout;
@@ -458,7 +459,7 @@ public class AttackCalculationPanel extends WizardPage {
         if (jBruteForce.isSelected()) {
             calculator = new BruteForce();
         } else if (jSystematicCalculation.isSelected()) {
-            calculator = new Iterix();
+            calculator = new EdmondsKarpAttack();
         }
         Hashtable<UnitHolder, List<Village>> sources = new Hashtable<UnitHolder, List<Village>>();
         Hashtable<UnitHolder, List<Village>> fakeSources = new Hashtable<UnitHolder, List<Village>>();
